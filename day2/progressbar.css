@@ -1,0 +1,31 @@
+body{
+  display: block;
+  width: auto;
+  height: auto;
+  background-color: beige;
+  color: dimgray;
+}
+span {
+  margin-left: 10px;
+  font-size: larger;
+}
+.container{
+  background-color: navajowhite;
+  height: 400px;
+  width: 600px;
+  margin: 0 auto;
+  padding: 50px;
+}
+progress{
+  -webkit-appearance: none;
+  width: 50%;
+  height: 40px;
+  color: antiquewhite;
+  border-radius: px;
+}
+
+::-webkit-progress-value {
+  background-color: orange;
+}
+
+

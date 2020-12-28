@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <link rel="stylesheet" href="button.css">
+   <title>CSS button practice</title>
+   <link>
+</head>
+
+<body>
+  <script>
+    const week = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+    const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November','December']
+
+    var textIndex = -1;
+    document.getElementById('h').innerHTML = week[textIndex];
+    document.getElementById('h1').innerHTML = month[textIndex];
+
+
+    // why output an undefined after Sunday
+    function nextElement() {
+      textIndex += 1;
+      if (textIndex > 7) {
+        textIndex = 0;
+      }
+      document.getElementById('h').innerHTML = week[textIndex];
+    }
+
+    function nextElement1() {
+      textIndex += 1;
+      if (textIndex > 12) {
+        textIndex = 0;
+      }
+      document.getElementById('h1').innerHTML = month[textIndex];
+    }
+  
+
+
+  </script>
+  <div class="container">
+    <h1 id="h">Monday</h1>
+    <h1 id="h1">January</h1>
+    <button id="b1" onclick=nextElement()>Change Day</button>
+    <button id="b2" onclick=nextElement1()>Change Month</button>
+  </div>
+  
+</body>
+</html>

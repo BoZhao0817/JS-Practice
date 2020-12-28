@@ -1,0 +1,33 @@
+body{
+  background-color: whitesmoke;
+}
+
+.container {
+  background-color:bisque;
+  height: 400px;
+  padding: 100px 300px;
+}
+
+button {
+  background-color: darkseagreen;
+  border: none;
+  border-radius: 5px;
+  outline:none; /*move border when clicked */
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.3s;
+}
+/* change backgroud color when cursor move to button */
+button:hover {
+  background-color: lightgreen;
+  color: white;
+}
+
+/* change color after clicked(pressed) */
+button:active {
+  color: grey; 
+}

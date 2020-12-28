@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <title>PictureViewing.html</title>
+
+   <style>
+      .centered {
+         text-align: center;
+         margin: 16px auto;
+      }
+      #image_element_id {
+         height: 300px;
+         width: 400px;
+         background-color: black;
+      }
+      p {
+         font-size: larger;
+         color: grey;
+      }
+   </style>
+
+   <script>
+      var picture_file_names = [
+      "images/1.jpg",
+      "images/2.jpg", 
+      "images/3.jpg",
+      "images/4.jpg"];
+      var picture_index = 0;
+
+      function show_next_picture() {
+         picture_index++;
+         if (picture_index >= picture_file_names.length) { picture_index = 0; }
+         var image_element = document.getElementById("image_element_id");
+         image_element.src = picture_file_names[picture_index];
+         document.getElementById('p').innerHTML = picture_file_names[picture_index].slice(7,12);
+      }
+      function show_previous_picture() {
+         picture_index--;
+         if (picture_index < 0) { picture_index = picture_file_names.length-1; }
+         var image_element = document.getElementById("image_element_id");
+         image_element.src = picture_file_names[picture_index];
+         document.getElementById('p').innerHTML = picture_file_names[picture_index].slice(7,12);
+      }
+      function zoom_in() {
+         var image = document.getElementById('image_element_id');
+         var currWidth = image.clientWidth;
+         if(currWidth == 1200){
+               alert("Maximum zoom-in level reached.");
+         } else{
+            image.style.width = (currWidth + 50) + "px";
+            image.style.height = 'auto';
+         } 
+      }
+      function zoom_out() {
+         var image = document.getElementById('image_element_id');
+         var currWidth = image.clientWidth;
+         if(currWidth == 200){
+               alert("Minimize zoom-out level reached.");
+         } else{
+            image.style.width = (currWidth - 50) + "px";
+            image.style.height = 'auto';
+         } 
+      }
+      function change_photo() {
+         show_next_picture();
+      }
+   </script>
+</head>
+
+<body>
+
+   <div class="centered">
+      <button onclick="show_previous_picture()">Previous</button>
+      <button onclick="show_next_picture()">Next</button>
+   </div>
+
+   <div class="centered">
+      <div class="img_container">
+         <img id="image_element_id" 
+          src="./images/1.jpg"
+          onclick="change_photo()">
+         <p id="p">1.jpg</p>
+      </div>    
+   </div>
+   
+   <div class="centered">
+      <button onclick="zoom_in()">Zoom in</button>
+      <button onclick="zoom_out()">Zoom out</button>
+   </div>
+</body>
+</html>
